@@ -1,0 +1,135 @@
+body {
+	padding: 0;
+	margin: 0;
+	}
+	html, body, #map {
+	height: 100%;
+	}
+.info1 {
+	padding: 1px 1px;
+	font: 10px/16px Arial, Helvetica, sans-serif;
+	background: white;
+	text-align: center;
+	/* line-height: 20px; */
+	background: rgba(255,255,255,0.8);
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 5px;
+	}
+.info2 {
+	padding: 1px 1px;
+	font: 14px/16px Arial, Helvetica, sans-serif;
+	background: white;
+	text-align: center;
+	background: rgba(255,255,255,0.8);
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 5px;
+}
+.info3 {
+	position:absolute;
+	font: 10px/16px Arial, Helvetica, sans-serif;
+	padding: 0px 0px;
+	right:100px;
+	bottom:17px;
+	overflow: hidden;
+	border: none;
+	background: white;
+	opacity: 1;
+	border-radius: 5px;
+	z-index:2000;
+}
+.info h2 {
+	margin: 0 0 5px;
+	color: #777;
+}
+h3 { 
+	width: 270px;  
+	display: block;
+	font-size: 1.4em;
+	margin-top: 0.0em;
+	margin-bottom: 0.0em;
+	margin-left: 0;
+	margin-right: 0;
+	font-weight: bold;
+}
+h5 { 
+	display: block;
+	margin-top: 0.0em;
+	margin-bottom: 0.0em;
+	margin-left: 0;
+	margin-right: 0;
+	font-weight: bold;
+}
+#norte {
+	position: absolute;
+	left:50px;
+	top:20px;
+	overflow: hidden;
+	border: none;
+	background-color: rgb(0,0,255);
+	opacity: 0.7;
+	border-radius: 600px;
+	z-index:2000;
+}
+.legend {
+	 line-height: 18px;
+	 text-align: center;
+	 color: #555;
+}
+.legend i {
+	 width: 18px;
+	 float: left;
+	 margin-right: 8px;
+	 opacity: 0.7;
+}
+.label {
+	padding: 50px 50px;
+	font: 14px/16px Arial, Helvetica, sans-serif;
+	background: white;
+	background: rgba(255,255,255,0.8);
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 7px;
+}
+.botoninfo	{
+	padding: 0px 0px;
+	width: 34px;
+	height: 34px;
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	background: "white";
+	border-radius: 5px;
+	z-index:2001;
+}
+.leaflet-control.leaflet-bar.leaflet-html-legend	{
+	width: 265px;
+	overflow: hidden;
+	line-height: 20px;
+}
+.leaflet-control-layers.leaflet-control-layers-expanded.leaflets-control	{
+	width:180px;
+	padding: 20px 8px;
+	line-height: 25px;
+}
+.h4.closed	{
+	line-height: 1px;
+	display: block;
+	font-size: 1.4em;
+	margin-top: 0.0em;
+	margin-bottom: 0.0em;
+	margin-left: 0;
+	margin-right: 0;
+	font-weight: bold;
+}
+.legend-row {
+	line-height: 15px;
+	display: block;
+	font-size: 1.4em;
+	margin-top: 0.0em;
+	margin-bottom: 0.0em;
+	margin-left: 0;
+	margin-right: 0;
+	font-weight: bold;
+}
+.leaflet-control-minimap leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom leaflet-control{
+	padding: 0px 0px;
+	width: 34px;
+	height: 34px;
+}

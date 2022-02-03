@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />	
+		<title>Indicadores de contaminación atmosferica en España</title>
+		<link rel="shortcut icon" type="image/x-icon" href="images/ico.png" />
+		<!-- Leaflet -->
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" 
+			integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>		
+		<!-- Plugin Leyenda -->
+		<link rel="stylesheet" href="plugins/L.Control.HtmlLegend.css" />
+		<!-- Plugin pantalla completa -->		
+		<link rel="stylesheet" href="plugins/Control.FullScreen.css">
+		<!-- Plugin Minmapa -->
+		<link rel="stylesheet" href="plugins/Control.MiniMap.css" />
+			<!-- Plugin Geocoding -->		
+		<link rel="stylesheet" href="plugins/Control.Geocoder.css" />
+		<!-- Plugin Sidebar -->		
+		<link rel="stylesheet" href="plugins/L.Control.Sidebar.css">
+		<!-- Plugin home -->		
+		<link rel="stylesheet" href="plugins/font-awesome.min.css"/>
+		<link rel="stylesheet" href="plugins/leaflet.zoomhome.css"/>
+		<!-- Plugin layer tree-->
+		<link rel="stylesheet" href="plugins/L.Control.Layers.Tree.css"/>	
+		<!-- Estilos de los mapas del portal de fundacion matrix -->
+		<link rel="stylesheet" href="estilos/estilos_matrix.css" />
+	</head>
+	<body>
+		<!-- Leaflet -->					
+		<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
+			integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+		<!-- Plugin Leyenda -->
+		<script src="plugins/L.Control.HtmlLegend.min.js"></script>
+		<!-- Plugin FullScreen -->		
+		<script src="plugins/Control.FullScreen.js"></script>
+		<!-- Plugin minimapa -->			
+		<script src="plugins/Control.MiniMap.js" type="text/javascript"></script> 
+		<!-- Plugin zoomhome -->			
+		<script src="plugins/leaflet.zoomhome.min.js"></script>
+		<!-- Plugin localizador -->	
+		<script src="plugins/Control.Geocoder.js"></script>
+		<!-- Plugin capas de Google -->
+		<script src='https://unpkg.com/leaflet.gridlayer.googlemutant@latest/Leaflet.GoogleMutant.js'></script>
+		<!-- Plugin sidebar -->		
+		<script src="plugins/L.Control.Sidebar.js"></script>
+		<script src="plugins/L.Control.Button.js"></script>
+		<!-- Plugin layer tree -->
+		<script src="plugins/L.Control.Layers.Tree.js"></script>
+		
+		<!-- Archivos GeoJson -->
+		<script type="text/javascript" src="layers/comunidades_line_3.js"></script>
+		<script type="text/javascript" src="layers/impactsig.js"></script>
+		<script type="text/javascript" src="layers/impactsig_point.js"></script>
+		<script type="text/javascript" src="layers/enp.js"></script>
+		
+		<!-- botón ayuda -->
+			<div id="sidebar"  style="width:290px; ">
+				<h2>INSTRUCCIONES DE USO</h2>
+				<p><b><img src="images/capas.png" width="16%" align="center"></img> Selecionar el mapa de la variable que desea visualizar  </b></p>
+				<p><b><img src="images/dedo.png" width="12%" align="center"></img>  Deslizar sobre el mapa o pulsar para ver datos </b></p>
+				<p><b><img src="images/mover.png" width="12%" align="center"></img>  Pulsar y mantener para desplazar el mapa  </b></p>				
+				<p><b><img src="images/mas.png" width="16%" align="center"></img> Pulsar para acercar el mapa </b></p>	
+				<p><b><img src="images/home.png" width="16%" align="center"></img> Pulsar para volver a la posición inicial </b></p>				
+				<p><b><img src="images/menos.png" width="16%" align="center"></img> Pulsar para alejar el mapa </b></p>
+				<p><b><img src="images/full.png" width="16%" align="center"></img> Pulsar para ver en pantalla completa </b></p>
+				<p><b><img src="images/search.png" width="16%" align="center"></img> Introducir el município (localidad) que desea buscar </b></p>
+				<p><b><img src="images/info.png" width="16%" align="center"></img> Pulsar para ver las Administraciones que apoyan/cofinancian el presente visor cartográfico </b></p>
+				<p><b><img src="images/minimapa.png" width="16%" align="center"></img> Pulsar para minimizar el mapa de situación </b></p>
+				<p><b><img src="images/leyenda.png" width="16%" align="center"></img> Pulsar para minimizar la leyenda </b></p> <br>	
+				<a href="https://www.fundacionmatrix.es"><img src="images/matrix3.png" width="100%" align="center" ></img></a>
+			</div>
+		<!-- botón información -->			
+			<div id="sidebar2"  style="width:410px; ">
+				<a href="https://www.fundacionmatrix.es"><img src="images/matrix2.png" width="100%" align="center" ></img></a>
+				<h4><br>Con el apoyo de:</h4>
+				<a href="https://www.miteco.gob.es/es/"><img src="images/LOGO MITECO.jpg" width="100%" align="center" ></img></a>
+			</div>
+		<!-- Brújula -->	
+			<div id="map">		
+					<!-- <div id="norteImagen"> -->
+					<!-- <img id="norte" src="images/norte2.png" width="60px" height="60px"  alt="0" title="Norte" /> -->
+			</div>
+		<!-- Botones -->			
+			<div id="botonera"></div>
+				<button id="helpbutton" role="button" class="botoninfo"><img src="images/ayuda.png" width="28" height="28" align="left"></button>
+					<!-- Botón Sidebar2  -->
+			<div id="botonera2"></div>
+			<button id="helpbutton2" role="button2" class="botoninfo2"><img src="images/info.png" width="32" height="35"></button>
+		<!-- Script de mapas -->			
+		<script type="text/javascript" src="mapas_matrix.js"></script>
+	</body>
+</html>
